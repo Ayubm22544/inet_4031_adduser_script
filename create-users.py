@@ -45,7 +45,6 @@ def main():
         cmd = "/usr/sbin/adduser --disabled-password --gecos '%s' %s" % (gecos, username)
 
         # Uncomment the line below to execute the user creation command
-        # os.system(cmd)
 
         # Informing the admin that the user's password is being set
         print("==> Setting the password for %s..." % (username))
@@ -54,7 +53,6 @@ def main():
         cmd = "/bin/echo -ne '%s\n%s' | /usr/bin/sudo /usr/bin/passwd %s" % (password, password, username)
 
         # Uncomment the line below to execute the password setting command
-        # os.system(cmd)
 
         # Assign user to groups if applicable
         for group in groups:
@@ -63,7 +61,7 @@ def main():
                 print("==> Assigning %s to the %s group..." % (username, group))
                 cmd = "/usr/sbin/adduser %s %s" % (username, group)
                 # Uncomment the line below to execute the group assignment command
-                # os.system(cmd)
+
 
 # Run the script when executed directly
 if __name__ == '__main__':
